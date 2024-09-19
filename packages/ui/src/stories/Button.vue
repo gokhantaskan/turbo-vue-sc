@@ -1,31 +1,49 @@
 <script lang="ts" setup>
-export interface ButtonProps {
+import { computed } from "vue";
+
+export type ButtonProps = {
   type?: "button" | "submit";
   variant?: "default" | "primary" | "error";
   size?: "sm" | "md" | "lg" | "xl";
-  /* Corner round of the button */
+  /**
+   *  Rounded to the max!
+   **/
   pill?: boolean;
   disabled?: boolean;
-}
+  /**
+   * Loading state also triggers <strong>disabled</strong> state.
+   **/
+  loading?: boolean;
+};
 
-const {
-  type = "button",
-  variant = "primary",
-  size = "md",
-  pill = false,
-  disabled = false,
-} = defineProps<ButtonProps>();
+const props = withDefaults(defineProps<ButtonProps>(), {
+  type: "button",
+  variant: "primary",
+  size: "md",
+  pill: false,
+  disabled: false,
+  loading: false,
+});
 
 defineSlots<{
   default(props: any): any;
 }>();
+
+const isDisabled = computed(() => props.loading || props.disabled);
 </script>
 
 <template>
   <button
-    :class="['p-button', `p-button--${variant}`, `p-button--${size}`, pill && `p-button--pill`]"
+    :class="[
+      'p-button',
+      `p-button--${variant}`,
+      `p-button--${size}`,
+      pill && 'p-button--pill',
+      isDisabled && 'p-button--disabled',
+      loading && 'p-button--loading',
+    ]"
     :type
-    :disabled
+    :disabled="loading || disabled"
   >
     <slot />
   </button>
@@ -33,7 +51,9 @@ defineSlots<{
 
 <style lang="scss">
 .p-button {
-  @apply inline-block cursor-pointer border border-transparent rounded font-bold;
+  @apply relative inline-flex items-center justify-center;
+  @apply border border-transparent rounded;
+  @apply cursor-pointer font-bold;
 
   // Variants
   &--primary {
@@ -73,7 +93,12 @@ defineSlots<{
   // States
   &:disabled,
   &--disabled {
-    @apply opacity-50 cursor-not-allowed;
+    @apply cursor-not-allowed;
+  }
+
+  &:disabled:not(#{&}--loading),
+  &--disabled:not(#{&}--loading) {
+    @apply opacity-50;
   }
 }
 </style>

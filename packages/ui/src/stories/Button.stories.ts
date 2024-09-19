@@ -15,6 +15,7 @@ const meta = {
     type: { control: "radio", options: ["submit", "button"] },
     pill: { control: "boolean" },
     disabled: { control: "boolean" },
+    loading: { control: "boolean" },
   },
   args: {
     size: "md",
@@ -22,6 +23,7 @@ const meta = {
     type: "button",
     pill: false,
     disabled: false,
+    loading: false,
     default: "Button", // Default slot text
   },
 } satisfies Meta;
