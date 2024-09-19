@@ -1,0 +1,28 @@
+{
+  "name": "acme-monorepo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "type-check": "turbo type-check",
+    "lint": "turbo lint lint:root",
+    "lint:root": "eslint \"*.{js,cjs,mjs,ts,cts,mts,vue}\" --fix",
+    "format": "prettier --write \"**/*.{js,cjs,mjs,ts,cts,mts,tsx,vue,md,json,html,css,scss}\" -l -u",
+    "lf": "pnpm lint && pnpm format",
+    "clean": "rimraf --glob **/dist **/.nuxt **/.turbo **/.output **/node_modules/.vite **/node_modules/.cache **/inspect **/storybook-static",
+    "clean:all": "pnpm clean && rimraf --glob **/node_modules"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.1.1",
+    "eslint": "^9.10.0",
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "turbo": "^2.1.2",
+    "typescript": "^5.6.2"
+  },
+  "packageManager": "pnpm@9.10.0",
+  "engines": {
+    "node": ">=20"
+  }
+}

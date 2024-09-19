@@ -1,0 +1,26 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "stream",
+  "globalEnv": ["NODE_ENV"],
+  "tasks": {
+    "transit": {
+      "dependsOn": ["^transit"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": [".nuxt/**", "!.nuxt/cache/**", "dist/**"]
+    },
+    "type-check": {
+      "dependsOn": ["^transit"]
+    },
+    "lint": {
+      "dependsOn": ["^lint"]
+    },
+    "//#lint:root": {}
+  }
+}

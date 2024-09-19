@@ -1,0 +1,14 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+**/.vscode
+**/package.json
+**/*-lock.json
+**/*-lock.yml
+**/*-lock.yaml
+
+# output folders
+**/dist
+**/.output
+**/.nuxt
