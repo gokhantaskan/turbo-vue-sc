@@ -11,14 +11,16 @@ const meta = {
   tags: ["autodocs", "!dev"],
   argTypes: {
     size: { control: "select", options: ["sm", "md", "lg", "xl"] },
-    variant: { control: "select", options: ["primary", "default", "destructive"] },
-    type: { control: "select", options: ["submit", "button"] },
+    variant: { control: "select", options: ["primary", "default", "error"] },
+    type: { control: "radio", options: ["submit", "button"] },
+    pill: { control: "boolean" },
     disabled: { control: "boolean" },
   },
   args: {
     size: "md",
     variant: "primary",
     type: "button",
+    pill: false,
     disabled: false,
     default: "Button", // Default slot text
   },

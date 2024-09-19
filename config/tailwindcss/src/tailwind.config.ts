@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default <Config>{
   content: [],
@@ -6,6 +7,16 @@ export default <Config>{
     preflight: false,
   },
   theme: {
+    colors: {
+      primary: colors.blue,
+      gray: colors.slate,
+      success: colors.green,
+      warning: colors.amber,
+      error: colors.red,
+      transparent: "transparent",
+      black: "#000",
+      white: "#fff",
+    },
     extend: {
       container: {
         center: true,
