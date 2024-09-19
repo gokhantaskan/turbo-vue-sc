@@ -12,3 +12,4 @@
 **/dist
 **/.output
 **/.nuxt
+**/storybook-static
