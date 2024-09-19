@@ -7,7 +7,7 @@
   box-sizing: border-box;
   border-width: 0;
   border-style: solid;
-  border-color: #eee;
+  @apply border-gray-300;
 }
 
 /*
@@ -66,6 +66,6 @@ h6 {
   8. Create a root stacking context
 */
 #root,
-#__next {
+#__nuxt {
   isolation: isolate;
 }

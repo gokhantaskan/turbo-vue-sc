@@ -1,9 +1,12 @@
-import type { Meta } from "@storybook/vue3";
+import type { Meta as _Meta, StoryObj } from "@storybook/vue3";
 
 import Button from "./Button.vue";
 
+type Meta = _Meta<typeof Button>;
+type Story = StoryObj<typeof meta>;
+
 const meta = {
-  title: "Form/Button",
+  title: "Forms/Button",
   component: Button,
   tags: ["autodocs", "!dev"],
   argTypes: {
@@ -19,6 +22,8 @@ const meta = {
     disabled: false,
     default: "Button", // Default slot text
   },
-} satisfies Meta<typeof Button>;
+} satisfies Meta;
 
 export default meta;
+
+export const Primary: Story = {};
