@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
   css: ["@acme/ui/main.scss"],
+  typescript: { typeCheck: true },
   modules: [
     [
       "@nuxtjs/tailwindcss",
