@@ -14,7 +14,7 @@ const meta = {
     asChild: { table: { control: false } },
     size: { control: "select", options: ["sm", "md", "lg", "xl"] },
     variant: { control: "select", options: ["primary", "default", "error"] },
-    type: { control: "radio", options: ["submit", "button"] },
+    type: { control: "select", options: ["submit", "button"] },
     pill: { control: "boolean" },
     disabled: { control: "boolean" },
     loading: { control: "boolean" },
@@ -33,6 +33,7 @@ const meta = {
 
 export default meta;
 
+// Keep this to show the meta as the "Docs" story
 export const DefaultStory: Story = {
   tags: ["!dev"],
 };

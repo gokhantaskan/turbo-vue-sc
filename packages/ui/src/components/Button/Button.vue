@@ -14,9 +14,6 @@ export type ButtonProps = {
   type?: "button" | "submit";
   variant?: "default" | "primary" | "error";
   size?: "sm" | "md" | "lg" | "xl";
-  /**
-   *  Rounded to the max!
-   **/
   pill?: boolean;
   disabled?: boolean;
   loading?: boolean;
