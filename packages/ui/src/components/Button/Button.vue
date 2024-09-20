@@ -1,7 +1,16 @@
 <script lang="ts" setup>
+import { Primitive, type PrimitiveProps } from "radix-vue";
 import { computed } from "vue";
 
 export type ButtonProps = {
+  /**
+   * The element or component the current element should render as. More details: <a target="_blank" rel="noopener noreferrer" href="https://www.radix-vue.com/utilities/primitive.html">Radix Primitive</a>.
+   */
+  as?: PrimitiveProps["as"];
+  /**
+   * Change the default rendered element for the one passed as a child, merging their props and behavior. More details: <a target="_blank" rel="noopener noreferrer" href="https://www.radix-vue.com/utilities/primitive.html">Radix Primitive</a>.
+   */
+  asChild?: PrimitiveProps["asChild"];
   type?: "button" | "submit";
   variant?: "default" | "primary" | "error";
   size?: "sm" | "md" | "lg" | "xl";
@@ -10,13 +19,12 @@ export type ButtonProps = {
    **/
   pill?: boolean;
   disabled?: boolean;
-  /**
-   * Loading state also triggers <strong>disabled</strong> state.
-   **/
   loading?: boolean;
 };
 
 const props = withDefaults(defineProps<ButtonProps>(), {
+  as: "button",
+  asChild: false,
   type: "button",
   variant: "primary",
   size: "md",
@@ -30,10 +38,18 @@ defineSlots<{
 }>();
 
 const isDisabled = computed(() => props.loading || props.disabled);
+
+// Use this order to prevent attribute injection to the non-button html tag
+const isNotButton = computed(() => props.as !== "button" || props.asChild);
+const buttonAttributes = computed(() =>
+  !isNotButton.value ? { type: props.type, disabled: isDisabled.value } : {}
+);
 </script>
 
 <template>
-  <button
+  <Primitive
+    :as
+    :as-child
     :class="[
       'p-button',
       `p-button--${variant}`,
@@ -42,9 +58,13 @@ const isDisabled = computed(() => props.loading || props.disabled);
       isDisabled && 'p-button--disabled',
       loading && 'p-button--loading',
     ]"
-    :type
-    :disabled="loading || disabled"
+    v-bind="buttonAttributes"
   >
     <slot />
-  </button>
+    <span
+      v-if="loading"
+      class="p-button__loader"
+      aria-hidden="true"
+    ></span>
+  </Primitive>
 </template>

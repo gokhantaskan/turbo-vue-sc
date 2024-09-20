@@ -5,12 +5,22 @@ import { Button } from "@acme/ui";
 <template>
   <div class="container">
     <h1>Home</h1>
-    <div>
+    <div class="space-x-2">
       <Button
         variant="primary"
         size="md"
-        >Button</Button
       >
+        Button
+      </Button>
+      <Button
+        variant="primary"
+        size="md"
+        as="a"
+        href="https://google.com"
+        target="_blank"
+      >
+        Link
+      </Button>
     </div>
   </div>
 </template>

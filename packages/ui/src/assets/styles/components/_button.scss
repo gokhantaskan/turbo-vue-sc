@@ -1,7 +1,7 @@
 .p-button {
   @apply relative inline-flex items-center justify-center;
   @apply border border-transparent rounded;
-  @apply cursor-pointer font-bold;
+  @apply cursor-pointer no-underline font-bold;
 
   // Variants
   &--primary {
@@ -44,8 +44,24 @@
     @apply cursor-not-allowed;
   }
 
+  &--loading {
+    @apply relative text-transparent;
+  }
+
   &:disabled:not(#{&}--loading),
   &--disabled:not(#{&}--loading) {
     @apply opacity-50;
+  }
+
+  &__loader {
+    @apply absolute size-4 border-2 border-solid rounded-full !border-r-transparent;
+    @apply border-white;
+    animation: button-loader-spin 0.75s linear infinite;
+  }
+
+  @keyframes button-loader-spin {
+    to {
+      transform: rotate(360deg);
+    }
   }
 }

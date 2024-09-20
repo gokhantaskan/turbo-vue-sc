@@ -1,6 +1,6 @@
 import type { Meta as _Meta, StoryObj } from "@storybook/vue3";
 
-import Button from "@/components/Button/Button.vue";
+import { Button } from "@/components/Button";
 
 type Meta = _Meta<typeof Button>;
 type Story = StoryObj<typeof meta>;
@@ -8,8 +8,10 @@ type Story = StoryObj<typeof meta>;
 const meta = {
   title: "Forms/Button",
   component: Button,
-  tags: ["autodocs", "!dev"],
+  tags: ["autodocs"],
   argTypes: {
+    as: { control: "text" },
+    asChild: { table: { control: false } },
     size: { control: "select", options: ["sm", "md", "lg", "xl"] },
     variant: { control: "select", options: ["primary", "default", "error"] },
     type: { control: "radio", options: ["submit", "button"] },
@@ -18,6 +20,7 @@ const meta = {
     loading: { control: "boolean" },
   },
   args: {
+    as: "button",
     size: "md",
     variant: "primary",
     type: "button",
@@ -30,4 +33,43 @@ const meta = {
 
 export default meta;
 
-export const Primary: Story = {};
+export const DefaultStory: Story = {
+  tags: ["!dev"],
+};
+
+// Story for 'as' prop
+export const AsLink: Story = {
+  args: {
+    as: "a",
+    default: "Link Button",
+  },
+  render: args => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: '<Button v-bind="args" href="#">{{ args.default }}</Button>',
+  }),
+};
+
+// Story for 'asChild' prop
+export const AsChild: Story = {
+  args: {
+    as: undefined,
+    asChild: true,
+    default: "Custom Element",
+  },
+  render: args => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `
+      <Button v-bind="args">
+        <div>
+          {{ args.default }}
+        </div>
+      </Button>
+    `,
+  }),
+};
