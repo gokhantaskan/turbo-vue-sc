@@ -1,0 +1,29 @@
+{
+  "name": "client",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "eslint . --fix",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^0.5.7",
+    "@nuxtjs/tailwindcss": "^6.12.1",
+    "nuxt": "^3.13.0",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@acme/eslint-config": "workspace:*",
+    "@acme/tailwindcss-config": "workspace:*",
+    "@acme/ui": "workspace:*",
+    "eslint": "^9.10.0",
+    "postcss-preset-env": "^10.0.3",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.6.2"
+  }
+}

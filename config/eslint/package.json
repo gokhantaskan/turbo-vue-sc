@@ -2,9 +2,7 @@
   "name": "@acme/eslint-config",
   "version": "0.0.0",
   "private": true,
-  "files": [
-    "base.mjs"
-  ],
+  "files": ["."],
   "scripts": {
     "lint": "eslint . --fix"
   },

@@ -3,6 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "exports": {
+    "./main.scss": "./src/assets/styles/main.scss",
+    "./base.scss": "./src/assets/styles/base.scss",
+    "./reset.scss": "./src/assets/styles/reset.scss"
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
