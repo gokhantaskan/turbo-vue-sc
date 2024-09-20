@@ -1,2 +1,8 @@
-@import "./reset.scss";
-@import "./base.scss";
+@tailwind utilities;
+
+// Base
+@import "base/reset";
+@import "base/base";
+
+// Components
+@import "components/button";

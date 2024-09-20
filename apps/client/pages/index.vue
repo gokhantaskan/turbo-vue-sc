@@ -9,7 +9,6 @@ import { Button } from "@acme/ui";
       <Button
         variant="primary"
         size="md"
-        disabled
         >Button</Button
       >
     </div>

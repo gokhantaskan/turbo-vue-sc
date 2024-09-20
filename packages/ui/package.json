@@ -5,20 +5,18 @@
   "type": "module",
   "exports": {
     ".": "./src/components/index.ts",
-    "./main.scss": "./src/assets/styles/main.scss",
-    "./base.scss": "./src/assets/styles/base.scss",
-    "./reset.scss": "./src/assets/styles/reset.scss"
+    "./main.scss": "./src/assets/styles/main.scss"
   },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "storybook build",
-    "dev:vite": "vite",
-    "build:vite": "vue-tsc -b && vite build",
-    "preview:vite": "vite preview",
+    "compile:sass": "sass --no-source-map ./src/assets/styles/main.scss ./dist/assets/styles/main.css",
+    "compile:css": "tailwindcss -i ./dist/assets/styles/main.css -o ./dist/assets/styles/main.css --minify",
+    "compile:styles": "run-s compile:sass compile:css",
     "lint": "eslint . --fix"
   },
   "dependencies": {
-    "vue": "^3.5.6"
+    "vue": "^3.5.7"
   },
   "devDependencies": {
     "@acme/eslint-config": "workspace:*",
@@ -36,13 +34,15 @@
     "@storybook/vue3": "^8.3.2",
     "@storybook/vue3-vite": "^8.3.2",
     "@vitejs/plugin-vue": "^5.1.4",
-    "eslint": "^9.10.0",
+    "eslint": "^9.11.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.47",
     "postcss-preset-env": "^10.0.3",
     "sass": "^1.79.2",
     "storybook": "^8.3.2",
     "tailwindcss": "^3.4.12",
     "typescript": "^5.6.2",
-    "vite": "^5.4.6",
+    "vite": "^5.4.7",
     "vue-component-meta": "^2.1.6",
     "vue-tsc": "^2.1.6"
   }

@@ -1,4 +1,3 @@
-import "../src/assets/styles/tailwind.css";
 import "../src/assets/styles/main.scss";
 
 import type { Preview } from "@storybook/vue3";

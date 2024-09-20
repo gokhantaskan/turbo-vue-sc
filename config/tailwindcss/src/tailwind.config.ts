@@ -1,8 +1,7 @@
 import type { Config } from "tailwindcss";
 import colors from "tailwindcss/colors";
 
-export default <Config>{
-  content: [],
+export default <Omit<Config, "content">>{
   corePlugins: {
     preflight: false,
   },

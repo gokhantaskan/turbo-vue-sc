@@ -1,13 +1,10 @@
 /*
-  1. Use a more-intuitive box-sizing model with tailwind border implementation.
+  1. Use a more-intuitive box-sizing model
 */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
-  border-width: 0;
-  border-style: solid;
-  @apply border-gray-300;
 }
 
 /*
