@@ -1,6 +1,6 @@
 .p-button {
   @apply relative inline-flex items-center justify-center;
-  @apply border border-transparent rounded;
+  @apply border border-solid border-transparent rounded;
   @apply cursor-pointer no-underline font-bold;
 
   // Variants
