@@ -1,5 +1,8 @@
 @tailwind utilities;
 
+// Abstracts
+@import "abstracts/keyframes";
+
 // Base
 @import "base/reset";
 @import "base/base";
