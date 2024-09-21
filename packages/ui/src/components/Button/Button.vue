@@ -7,10 +7,6 @@ export type ButtonProps = {
    * The element or component the current element should render as. More details: <a target="_blank" rel="noopener noreferrer" href="https://www.radix-vue.com/utilities/primitive.html">Radix Primitive</a>.
    */
   as?: PrimitiveProps["as"];
-  /**
-   * Change the default rendered element for the one passed as a child, merging their props and behavior. More details: <a target="_blank" rel="noopener noreferrer" href="https://www.radix-vue.com/utilities/primitive.html">Radix Primitive</a>.
-   */
-  asChild?: PrimitiveProps["asChild"];
   type?: "button" | "submit";
   variant?: "default" | "primary" | "error";
   size?: "sm" | "md" | "lg" | "xl";
@@ -37,16 +33,15 @@ defineSlots<{
 const isDisabled = computed(() => props.loading || props.disabled);
 
 // Use this order to prevent attribute injection to the non-button html tag
-const isNotButton = computed(() => props.as !== "button" || props.asChild);
+const isButton = computed(() => props.as === "button");
 const buttonAttributes = computed(() =>
-  !isNotButton.value ? { type: props.type, disabled: isDisabled.value } : {}
+  isButton.value ? { type: props.type, disabled: isDisabled.value } : {}
 );
 </script>
 
 <template>
   <Primitive
     :as
-    :as-child
     :class="[
       'p-button',
       `p-button--${variant}`,
@@ -62,6 +57,6 @@ const buttonAttributes = computed(() =>
       v-if="loading"
       class="p-button__loader"
       aria-hidden="true"
-    ></span>
+    />
   </Primitive>
 </template>
