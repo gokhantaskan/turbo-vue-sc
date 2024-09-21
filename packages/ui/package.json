@@ -5,14 +5,19 @@
   "type": "module",
   "exports": {
     ".": "./src/components/index.ts",
+    "./main.css": "./dist/assets/styles/main.css",
     "./main.scss": "./src/assets/styles/main.scss"
   },
+  "files": ["./src"],
   "scripts": {
-    "dev": "storybook dev -p 6006",
-    "build": "storybook build",
-    "compile:sass": "sass --no-source-map ./src/assets/styles/main.scss ./dist/assets/styles/main.css",
-    "compile:css": "tailwindcss -i ./dist/assets/styles/main.css -o ./dist/assets/styles/main.css --minify",
-    "compile:styles": "run-s compile:sass compile:css",
+    "dev": "concurrently 'pnpm dev:styles' 'pnpm dev:storybook'",
+    "dev:styles": "nodemon --watch 'src/assets/styles/*' -e scss --exec 'run-s compile:sass compile:tailwind'",
+    "dev:storybook": "storybook dev -p 6006",
+    "build": "run-s build:styles",
+    "build:styles": "run-s compile:sass 'compile:tailwind --minify'",
+    "build:storybook": "storybook build",
+    "compile:sass": "sass --no-source-map src/assets/styles/main.scss dist/assets/styles/main.css",
+    "compile:tailwind": "tailwindcss -i dist/assets/styles/main.css -o dist/assets/styles/main.css",
     "lint": "eslint . --fix"
   },
   "dependencies": {
@@ -35,7 +40,9 @@
     "@storybook/vue3": "^8.3.2",
     "@storybook/vue3-vite": "^8.3.2",
     "@vitejs/plugin-vue": "^5.1.4",
+    "concurrently": "^9.0.1",
     "eslint": "^9.11.0",
+    "nodemon": "^3.1.7",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.47",
     "postcss-preset-env": "^10.0.3",

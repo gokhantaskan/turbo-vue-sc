@@ -1,4 +1,5 @@
-import "../src/assets/styles/main.scss";
+// Avoid using compiled CSS here to prevent breaking Hot Module Replacement (HMR)
+import "@/assets/styles/main.scss";
 
 import type { Preview } from "@storybook/vue3";
 
