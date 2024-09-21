@@ -1,0 +1,12 @@
+:root {
+  --font-sans: #{$font-sans};
+  --font-serif: #{$font-serif};
+  --font-mono: #{$font-mono};
+  // Primary colors
+  --color-primary-500: #{$color-primary-500};
+  // Error colors
+  --color-error-500: #{$color-error-500};
+  // Gray scale
+  --color-gray-300: #{$color-gray-300};
+  --color-gray-500: #{$color-gray-500};
+}
