@@ -1,18 +1,23 @@
 import type { Config } from "tailwindcss";
-import colors from "tailwindcss/colors";
 
-export default <Config>{
-  content: [],
+export default <Omit<Config, "content">>{
   corePlugins: {
     preflight: false,
   },
   theme: {
     colors: {
-      primary: colors.blue,
-      gray: colors.slate,
-      success: colors.green,
-      warning: colors.amber,
-      error: colors.red,
+      primary: {
+        DEFAULT: "rgb(var(--color-primary))",
+        "500": "rgb(var(--color-primary))",
+      },
+      error: {
+        DEFAULT: "rgb(var(--color-error))",
+        "500": "rgb(var(--color-error))",
+      },
+      gray: {
+        "300": "rgb(var(--color-gray-300))",
+        "500": "rgb(var(--color-gray-500))",
+      },
       transparent: "transparent",
       black: "#000",
       white: "#fff",

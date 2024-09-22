@@ -1,0 +1,113 @@
+.p-button {
+  $root: &;
+
+  --button-rounded-base: var(--rounded-md);
+  --button-rounded-pill: var(--rounded-full);
+  --button-bg-color: transparent;
+  --button-fg-color: rgb(var(--color-gray-500));
+  --button-border-color: rgb(var(--color-gray-300));
+  --button-font-size: 0.875rem;
+  --button-py: 0.625rem;
+  --button-px: 0.875rem;
+  --button-lh: 1.25rem;
+  --button-gap: 0.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--button-fg-color);
+  background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-rounded-base);
+  font-size: var(--button-font-size);
+  padding-block: var(--button-py);
+  padding-inline: var(--button-px);
+  line-height: var(--button-lh);
+  gap: var(--button-gap);
+
+  // States
+  &:disabled,
+  &--disabled {
+    cursor: not-allowed;
+
+    &:not(:is(#{$root}--loading)) {
+      opacity: 0.5;
+    }
+  }
+
+  &--loading {
+    position: relative;
+    color: transparent !important;
+    opacity: 0.875;
+  }
+
+  // Variants
+  &--primary {
+    --button-bg-color: rgb(var(--color-primary));
+    --button-fg-color: white;
+    --button-border-color: transparent;
+  }
+
+  &--error {
+    --button-bg-color: rgb(var(--color-error));
+    --button-fg-color: white;
+    --button-border-color: transparent;
+  }
+
+  // Sizes
+  &--sm {
+    --button-py: 0.5rem;
+    --button-px: 0.75rem;
+    --button-lh: 1.25rem;
+    --button-gap: 0.25rem;
+  }
+
+  &--lg {
+    --button-font-size: 1rem;
+    --button-py: 0.625rem;
+    --button-px: 1rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.375rem;
+  }
+
+  &--xl {
+    --button-font-size: 1rem;
+    --button-py: 0.75rem;
+    --button-px: 1.125rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.375rem;
+  }
+
+  &--2xl {
+    --button-font-size: 1rem;
+    --button-py: 1rem;
+    --button-px: 1.375rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.6255rem;
+  }
+
+  // Pill
+  &--pill {
+    border-radius: $rounded-full;
+  }
+
+  // Loading state
+  &__loader {
+    position: absolute;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+    border-radius: $rounded-full;
+
+    width: var(--button-font-size);
+    height: var(--button-font-size);
+  }
+
+  &__loader {
+    color: var(--button-fg-color);
+  }
+}

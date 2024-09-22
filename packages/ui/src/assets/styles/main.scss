@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
 @tailwind utilities;
 
-@import "./reset.scss";
-@import "./base.scss";
+// Abstracts
+@import "abstracts/variables";
+@import "abstracts/keyframes";
+
+// Base
+@import "base/root";
+@import "base/reset";
+@import "base/base";
+
+// Components
+@import "components/button";

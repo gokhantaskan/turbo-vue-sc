@@ -1,6 +1,6 @@
 import type { Meta as _Meta, StoryObj } from "@storybook/vue3";
 
-import Button from "./Button.vue";
+import { Button } from "@/components/Button";
 
 type Meta = _Meta<typeof Button>;
 type Story = StoryObj<typeof meta>;
@@ -8,18 +8,20 @@ type Story = StoryObj<typeof meta>;
 const meta = {
   title: "Forms/Button",
   component: Button,
-  tags: ["autodocs", "!dev"],
+  tags: ["autodocs"],
   argTypes: {
-    size: { control: "select", options: ["sm", "md", "lg", "xl"] },
-    variant: { control: "select", options: ["primary", "default", "error"] },
-    type: { control: "radio", options: ["submit", "button"] },
+    as: { control: "text" },
+    size: { control: "select", options: ["base", "sm", "lg", "xl", "2xl"] },
+    variant: { control: "select", options: ["default", "primary", "error"] },
+    type: { control: "select", options: ["submit", "button"] },
     pill: { control: "boolean" },
     disabled: { control: "boolean" },
     loading: { control: "boolean" },
   },
   args: {
-    size: "md",
-    variant: "primary",
+    as: "button",
+    size: "base",
+    variant: "default",
     type: "button",
     pill: false,
     disabled: false,
@@ -30,4 +32,7 @@ const meta = {
 
 export default meta;
 
-export const Primary: Story = {};
+// Keep this to show the meta as the "Docs" story
+export const DefaultStory: Story = {
+  tags: ["!dev"],
+};

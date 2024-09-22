@@ -1,3 +1,3 @@
 <template>
-  <div>App</div>
+  <div><slot /></div>
 </template>

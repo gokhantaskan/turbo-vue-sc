@@ -1,14 +1,14 @@
 import pluginJs from "@eslint/js";
-import prettierRecommended from "eslint-plugin-prettier/recommended";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
 import pluginVue from "eslint-plugin-vue";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 
+import baseRules from "./bases/rules.base.mjs";
+
 /** @type {import("eslint").Linter.Config} */
 export default [
   {
-    files: ["**/*.{js,mjs,cjs,ts,cts,mts}"],
+    files: ["**/*.{js,mjs,cjs,ts,cts,mts,tsx}"],
     ignores: [
       "**/node_modules/",
       "**/.turbo/",
@@ -48,16 +48,5 @@ export default [
       ],
     },
   },
-  prettierRecommended,
-  {
-    plugins: {
-      "simple-import-sort": simpleImportSort,
-    },
-    rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
-      "@typescript-eslint/no-explicit-any": "off",
-      quotes: ["error", "double", { avoidEscape: true }],
-    },
-  },
+  ...baseRules,
 ];

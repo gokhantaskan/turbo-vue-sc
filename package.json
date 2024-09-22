@@ -10,12 +10,12 @@
     "lint:root": "eslint \"*.{js,cjs,mjs,ts,cts,mts,vue}\" --fix",
     "format": "prettier --write \"**/*.{js,cjs,mjs,ts,cts,mts,tsx,vue,md,json,html,css,scss}\" -l -u",
     "lf": "pnpm lint && pnpm format",
-    "clean": "rimraf --glob **/dist **/.nuxt **/.turbo **/.output **/node_modules/.vite **/node_modules/.cache **/inspect **/storybook-static",
+    "clean": "rimraf --glob **/dist **/.nuxt **/.turbo **/.output **/node_modules/.vite **/node_modules/.cache **/inspect **/storybook-static **/*.tsbuildinfo",
     "clean:all": "pnpm clean && rimraf --glob **/node_modules"
   },
   "devDependencies": {
     "@eslint/compat": "^1.1.1",
-    "eslint": "^9.10.0",
+    "eslint": "^9.11.0",
     "prettier": "^3.3.3",
     "rimraf": "^6.0.1",
     "turbo": "^2.1.2",
