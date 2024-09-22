@@ -5,7 +5,7 @@ import { Button } from "@acme/ui";
 <template>
   <div class="container">
     <h1>Home</h1>
-    <p>
+    <p class="text-gray-500">
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam explicabo autem eos?
       Reprehenderit dolor incidunt ullam ducimus earum recusandae nisi modi deserunt enim!
       Doloremque hic voluptatibus dignissimos voluptatem quisquam cupiditate.
