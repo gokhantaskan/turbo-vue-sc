@@ -1,11 +1,15 @@
 :root {
+  // Font families
   --font-sans: #{$font-sans};
   --font-serif: #{$font-serif};
   --font-mono: #{$font-mono};
+  // Border radius
+  --rounded-md: #{$rounded-md};
+  --rounded-full: #{$rounded-full};
   // Primary colors
-  --color-primary-500: #{$color-primary-500};
+  --color-primary: #{$color-primary-500};
   // Error colors
-  --color-error-500: #{$color-error-500};
+  --color-error: #{$color-error-500};
   // Gray scale
   --color-gray-300: #{$color-gray-300};
   --color-gray-500: #{$color-gray-500};

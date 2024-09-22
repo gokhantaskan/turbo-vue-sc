@@ -1,18 +1,16 @@
 .p-button {
   $root: &;
 
-  --rounded-default: #{$rounded-md};
-  --rounded-pill: #{$rounded-full};
-  // Default Colors
-  --bg-default: transparent;
-  --fg-default: rgb(#{$color-gray-500});
-  --border-default: rgb(#{$color-gray-300});
-  // Primary Colors
-  --bg-primary: rgb(#{$color-primary-500});
-  --fg-primary: white;
-  // Error Colors
-  --bg-error: rgb(#{$color-error-500});
-  --fg-error: white;
+  --button-rounded-base: var(--rounded-md);
+  --button-rounded-pill: var(--rounded-full);
+  --button-bg-color: transparent;
+  --button-fg-color: rgb(var(--color-gray-500));
+  --button-border-color: rgb(var(--color-gray-300));
+  --button-font-size: 0.875rem;
+  --button-py: 0.625rem;
+  --button-px: 0.875rem;
+  --button-lh: 1.25rem;
+  --button-gap: 0.25rem;
 
   display: inline-flex;
   align-items: center;
@@ -21,17 +19,15 @@
   text-decoration: none;
   font-weight: 500;
   cursor: pointer;
-  border-radius: var(--rounded-default);
-
-  &__loader {
-    position: absolute;
-    width: 1rem;
-    height: 1rem;
-    border: 2px solid currentColor;
-    border-right-color: transparent;
-    animation: spin 1s linear infinite;
-    border-radius: var(--rounded-pill);
-  }
+  color: var(--button-fg-color);
+  background-color: var(--button-bg-color);
+  border-color: var(--button-border-color);
+  border-radius: var(--button-rounded-base);
+  font-size: var(--button-font-size);
+  padding-block: var(--button-py);
+  padding-inline: var(--button-px);
+  line-height: var(--button-lh);
+  gap: var(--button-gap);
 
   // States
   &:disabled,
@@ -51,76 +47,67 @@
 
   // Variants
   &--primary {
-    background-color: var(--bg-primary);
-    color: var(--fg-primary);
-
-    #{$root}__loader {
-      color: var(--fg-primary);
-    }
-  }
-
-  &--default {
-    background-color: var(--bg-default);
-    color: var(--fg-default);
-    border-color: var(--border-default);
-
-    #{$root}__loader {
-      color: var(--fg-default);
-    }
+    --button-bg-color: rgb(var(--color-primary));
+    --button-fg-color: white;
+    --button-border-color: transparent;
   }
 
   &--error {
-    background-color: var(--bg-error);
-    color: var(--fg-error);
-
-    #{$root}__loader {
-      color: var(--fg-error);
-    }
+    --button-bg-color: rgb(var(--color-error));
+    --button-fg-color: white;
+    --button-border-color: transparent;
   }
 
   // Sizes
   &--sm {
-    padding-block: 0.5rem;
-    padding-inline: 0.75rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    gap: 0.25rem;
-  }
-
-  &--md {
-    padding-block: 0.625rem;
-    padding-inline: 0.875rem;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-    gap: 0.25rem;
+    --button-py: 0.5rem;
+    --button-px: 0.75rem;
+    --button-lh: 1.25rem;
+    --button-gap: 0.25rem;
   }
 
   &--lg {
-    padding-block: 0.625rem;
-    padding-inline: 1rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    gap: 0.375rem;
+    --button-font-size: 1rem;
+    --button-py: 0.625rem;
+    --button-px: 1rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.375rem;
   }
 
   &--xl {
-    padding-block: 0.75rem;
-    padding-inline: 1.125rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    gap: 0.375rem;
+    --button-font-size: 1rem;
+    --button-py: 0.75rem;
+    --button-px: 1.125rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.375rem;
   }
 
   &--2xl {
-    padding-block: 1rem;
-    padding-inline: 1.375rem;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    gap: 0.625rem;
+    --button-font-size: 1rem;
+    --button-py: 1rem;
+    --button-px: 1.375rem;
+    --button-lh: 1.5rem;
+    --button-gap: 0.6255rem;
   }
 
   // Pill
   &--pill {
-    border-radius: var(--rounded-pill);
+    border-radius: $rounded-full;
+  }
+
+  // Loading state
+  &__loader {
+    position: absolute;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    animation: spin 1s linear infinite;
+    border-radius: $rounded-full;
+
+    width: var(--button-font-size);
+    height: var(--button-font-size);
+  }
+
+  &__loader {
+    color: var(--button-fg-color);
   }
 }

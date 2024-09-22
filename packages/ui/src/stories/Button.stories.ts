@@ -11,8 +11,8 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     as: { control: "text" },
-    size: { control: "select", options: ["sm", "md", "lg", "xl"] },
-    variant: { control: "select", options: ["primary", "default", "error"] },
+    size: { control: "select", options: ["base", "sm", "lg", "xl", "2xl"] },
+    variant: { control: "select", options: ["default", "primary", "error"] },
     type: { control: "select", options: ["submit", "button"] },
     pill: { control: "boolean" },
     disabled: { control: "boolean" },
@@ -20,8 +20,8 @@ const meta = {
   },
   args: {
     as: "button",
-    size: "md",
-    variant: "primary",
+    size: "base",
+    variant: "default",
     type: "button",
     pill: false,
     disabled: false,

@@ -11,15 +11,8 @@ import { Button } from "@acme/ui";
       Doloremque hic voluptatibus dignissimos voluptatem quisquam cupiditate.
     </p>
     <div class="space-x-2">
+      <Button variant="primary">Button</Button>
       <Button
-        variant="primary"
-        size="md"
-      >
-        Button
-      </Button>
-      <Button
-        variant="primary"
-        size="md"
         as="a"
         href="https://google.com"
         target="_blank"

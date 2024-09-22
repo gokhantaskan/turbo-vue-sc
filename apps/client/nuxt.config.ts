@@ -10,7 +10,7 @@ export default defineNuxtConfig({
       link: [
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap",
         },
       ],
     },
@@ -24,7 +24,6 @@ export default defineNuxtConfig({
         exposeConfig: {
           level: 2,
         },
-        config: {},
         viewer: true,
       },
     ],

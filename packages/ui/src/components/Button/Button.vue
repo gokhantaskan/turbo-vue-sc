@@ -9,7 +9,7 @@ export type ButtonProps = {
   as?: PrimitiveProps["as"];
   type?: "button" | "submit";
   variant?: "default" | "primary" | "error";
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "sm" | "base" | "lg" | "xl";
   pill?: boolean;
   disabled?: boolean;
   loading?: boolean;
@@ -19,8 +19,8 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   as: "button",
   asChild: false,
   type: "button",
-  variant: "primary",
-  size: "md",
+  variant: "default",
+  size: "base",
   pill: false,
   disabled: false,
   loading: false,
@@ -44,8 +44,8 @@ const buttonAttributes = computed(() =>
     :as
     :class="[
       'p-button',
-      `p-button--${variant}`,
-      `p-button--${size}`,
+      size !== 'base' && `p-button--${size}`,
+      variant !== 'default' && `p-button--${variant}`,
       pill && 'p-button--pill',
       isDisabled && 'p-button--disabled',
       loading && 'p-button--loading',

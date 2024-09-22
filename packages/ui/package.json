@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "dev": "concurrently 'pnpm dev:styles' 'pnpm dev:storybook'",
-    "dev:styles": "nodemon --watch 'src/assets/styles/*' -e scss --exec 'run-s compile:sass compile:tailwind'",
+    "dev:styles": "nodemon --watch 'src/assets/styles/*' -e scss --exec 'run-s compile:sass \"compile:tailwind --minify\"'",
     "dev:storybook": "storybook dev -p 6006",
     "build": "run-s build:styles",
     "build:styles": "run-s compile:sass 'compile:tailwind --minify'",
