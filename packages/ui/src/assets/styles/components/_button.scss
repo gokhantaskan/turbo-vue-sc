@@ -6,6 +6,7 @@
   --button-bg-color: transparent;
   --button-fg-color: rgb(var(--color-gray-500));
   --button-border-color: rgb(var(--color-gray-300));
+  --button-ring-color: var(--color-primary);
   --button-font-size: 0.875rem;
   --button-py: 0.625rem;
   --button-px: 0.875rem;
@@ -39,6 +40,11 @@
     }
   }
 
+  &:focus {
+    outline: 2px solid rgb(var(--button-ring-color));
+    outline-offset: 2px;
+  }
+
   &--loading {
     position: relative;
     color: transparent !important;
@@ -56,6 +62,11 @@
     --button-bg-color: rgb(var(--color-error));
     --button-fg-color: white;
     --button-border-color: transparent;
+
+    // Error button ring has an error color ring
+    &:focus {
+      outline-color: rgb(var(--color-error));
+    }
   }
 
   // Sizes
@@ -93,6 +104,7 @@
   // Pill
   &--pill {
     border-radius: $rounded-full;
+    padding-inline: calc(0.375rem + var(--button-px));
   }
 
   // Loading state
@@ -103,11 +115,8 @@
     animation: spin 1s linear infinite;
     border-radius: $rounded-full;
 
+    color: var(--button-fg-color);
     width: var(--button-font-size);
     height: var(--button-font-size);
-  }
-
-  &__loader {
-    color: var(--button-fg-color);
   }
 }
