@@ -15,6 +15,10 @@
       "inputs": ["$TURBO_DEFAULT$", ".env*"],
       "outputs": [".nuxt/**", "!.nuxt/cache/**", "dist/**"]
     },
+    "preview": {
+      "cache": false,
+      "persistent": true
+    },
     "type-check": {
       "dependsOn": ["^transit"]
     },

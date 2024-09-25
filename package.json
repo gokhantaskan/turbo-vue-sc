@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
+    "preview": "turbo preview",
     "type-check": "turbo type-check",
     "lint": "turbo lint lint:root",
     "lint:root": "eslint \"*.{js,cjs,mjs,ts,cts,mts,vue}\" --fix",
