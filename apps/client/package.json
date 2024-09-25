@@ -22,10 +22,10 @@
     "@acme/eslint-config": "workspace:*",
     "@acme/tailwindcss-config": "workspace:*",
     "@acme/ui": "workspace:*",
-    "eslint": "^9.11.0",
-    "postcss-preset-env": "^10.0.3",
+    "eslint": "^9.11.1",
+    "postcss-preset-env": "^10.0.5",
     "sass": "^1.79.3",
-    "tailwindcss": "^3.4.12",
+    "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
     "vue-tsc": "^2.1.6"
   }
