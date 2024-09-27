@@ -11,7 +11,14 @@ import { Button } from "@acme/ui";
       Doloremque hic voluptatibus dignissimos voluptatem quisquam cupiditate.
     </p>
     <div class="space-x-2">
-      <Button variant="primary">Button</Button>
+      <span>Lorem ipsum dolor sit amet.</span>
+      <Button variant="primary">
+        <Icon
+          name="heroicons:bolt"
+          mode="svg"
+        />
+        Button
+      </Button>
       <Button
         as="a"
         href="https://google.com"

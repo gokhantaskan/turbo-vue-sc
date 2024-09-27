@@ -9,10 +9,12 @@
     "preview": "nuxt preview",
     "type-check": "nuxi typecheck",
     "lint": "eslint . --fix",
+    "analyze": "vue-mess-detector analyze .",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@nuxt/eslint": "^0.5.7",
+    "@nuxt/icon": "^1.5.2",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt": "^3.13.2",
     "vue": "latest",
@@ -27,6 +29,8 @@
     "sass": "^1.79.3",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.6.2",
+    "vue-mess-detector": "^0.55.0",
+    "vue-mess-detector-nuxt-devtools": "^0.1.2",
     "vue-tsc": "^2.1.6"
   }
 }

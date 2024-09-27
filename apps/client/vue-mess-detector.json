@@ -1,0 +1,4 @@
+{
+  "apply": "vue-recommended,rrd,security",
+  "level": "error"
+}

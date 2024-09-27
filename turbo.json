@@ -25,6 +25,9 @@
     "lint": {
       "dependsOn": ["^lint"]
     },
+    "analyze": {
+      "dependsOn": ["^transit"]
+    },
     "//#lint:root": {}
   }
 }

@@ -16,6 +16,8 @@ export default defineNuxtConfig({
     },
   },
   modules: [
+    // https://vue-mess-detector.webmania.cc/get-started.html
+    "vue-mess-detector-nuxt-devtools",
     [
       "@nuxtjs/tailwindcss",
       {
@@ -28,5 +30,16 @@ export default defineNuxtConfig({
       },
     ],
     ["@nuxt/eslint", {}],
+    [
+      "@nuxt/icon",
+      {
+        customCollections: [
+          {
+            prefix: "local",
+            dir: "./assets/img/icons",
+          },
+        ],
+      },
+    ],
   ],
 });
