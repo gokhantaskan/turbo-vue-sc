@@ -12,6 +12,10 @@ export type ButtonProps = {
   size?: "sm" | "base" | "lg" | "xl";
   pill?: boolean;
   disabled?: boolean;
+  /**
+   * The component gets `tabIndex: -1` in order to keep the default styles.
+   */
+  readonly?: boolean;
   loading?: boolean;
 };
 
@@ -23,6 +27,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   size: "base",
   pill: false,
   disabled: false,
+  readonly: false,
   loading: false,
 });
 
@@ -48,8 +53,10 @@ const buttonAttributes = computed(() =>
       variant !== 'default' && `p-button--${variant}`,
       pill && 'p-button--pill',
       isDisabled && 'p-button--disabled',
+      $props.readonly && 'p-button--readonly',
       loading && 'p-button--loading',
     ]"
+    :tabindex="$props.readonly ? -1 : undefined"
     v-bind="buttonAttributes"
   >
     <slot />

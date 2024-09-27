@@ -16,6 +16,7 @@ const meta = {
     type: { control: "select", options: ["submit", "button"] },
     pill: { control: "boolean" },
     disabled: { control: "boolean" },
+    readonly: { control: "boolean" },
     loading: { control: "boolean" },
   },
   args: {
@@ -25,6 +26,7 @@ const meta = {
     type: "button",
     pill: false,
     disabled: false,
+    readonly: false,
     loading: false,
     default: "Button", // Default slot text
   },
