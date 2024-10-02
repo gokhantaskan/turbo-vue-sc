@@ -1,4 +1,10 @@
 {
-  "apply": "vue-recommended,rrd",
-  "level": "error"
+  "apply": "vue-recommended,rrd,security",
+  "level": "error",
+  "group": "file",
+  "output": "table",
+  "exclude": "node_modules,*.test.ts,*.spec.ts",
+  "override": {
+    "topLevelElementOrder": "script-template-style"
+  }
 }

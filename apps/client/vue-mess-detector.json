@@ -1,4 +1,10 @@
 {
   "apply": "vue-recommended,rrd,security",
-  "level": "error"
+  "level": "error",
+  "group": "file",
+  "output": "table",
+  "exclude": "node_modules,*.test.ts,*.spec.ts",
+  "override": {
+    "maxFileSize": 400
+  }
 }
