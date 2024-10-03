@@ -15,6 +15,9 @@ export default defineNuxtConfig({
       ],
     },
   },
+  nitro: {
+    preset: "netlify",
+  },
   modules: [
     // https://vue-mess-detector.webmania.cc/get-started.html
     "vue-mess-detector-nuxt-devtools",
