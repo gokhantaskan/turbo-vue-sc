@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "Vue.volar",
-    "webmania.vue-mess-detector"
+    "webmania.vue-mess-detector",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode"
   ]
 }
